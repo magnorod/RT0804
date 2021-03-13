@@ -1,0 +1,40 @@
+# Opérations basiques
+
+## Modification du nom de l'hôte
+
+``Router(config)#hostname R2``
+
+## Désactiver la recherche DNS
+
+``Routeur(config)#no ip domain-lookup``
+
+## Définir le mdp pour le mode privileged
+
+``Routeur(config)# enable password $motdepasse ``
+
+## Définir le mdp chiffré pour le mode privileged
+
+``Routeur(config)# enable secret $motdepasse``
+
+## Chiffrer les mdp du mode privileged et console
+
+``Routeur(config)# service password-encryption`` 
+
+## Définir le mdp pour les connexions via le mode console
+
+```
+Router(config)#line con 0
+Router(config-line)#password $motdepasse
+Router(config-line)#login
+```
+
+## Définir le mdp pour les connexions via le mode vty
+
+```
+Router(config)#line vty 0 15
+Router(config-line)#password $motdepasse
+Router(config-line)#login local
+```
+## Ajouter une route par défaut
+
+``Router(config)# ip route 0.0.0.0 0.0.0.0 serial 0/0/0``
