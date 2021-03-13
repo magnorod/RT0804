@@ -2,7 +2,7 @@
 
 ## Modification du nom de l'hôte
 
-``Router(config)#hostname R2``
+``Router(config)#hostname $hostname``
 
 ## Désactiver la recherche DNS
 
@@ -37,4 +37,4 @@ Router(config-line)#login local
 ```
 ## Ajouter une route par défaut
 
-``Router(config)# ip route 0.0.0.0 0.0.0.0 serial 0/0/0``
+``Router(config)# ip route 0.0.0.0 0.0.0.0 $interface``
