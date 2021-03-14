@@ -22,3 +22,18 @@
 Router(config)#interface $interface-name
 Router(config-if)#ip ospf priority $priority-number
 ```
+
+## Ajouter une interface passive
+
+Les interfaces dites “passives” sont celles qui n’envoient aucun message d’un protocole de routage comme OSPF
+
+``Router(config-router)# passive-interface $interface-name``
+
+## Ajouter la 
+
+Indiquer au router qu'une de ses interfaces va devenir la route par défaut pour l'ensemble de la zone OSPF
+
+```
+Router(config)#router ospf 1
+Router(config-router)#default-information originate
+```
