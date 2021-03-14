@@ -44,4 +44,4 @@ Router(config-line)#login local
 ```
 R1(config)#banner motd $char-final
 Authorized users only, violaters will be shot on sight! $char-final
-``
+```
