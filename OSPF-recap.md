@@ -16,7 +16,7 @@
 
 ``Router#show ip ospf neighbor``
 
-# Définir la priorité d'une interface
+## Définir la priorité d'une interface
 
 ```
 Router(config)#interface $interface-name
