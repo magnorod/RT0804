@@ -2,7 +2,7 @@
 
 ## Modification du nom de l'hôte
 
-``Router(config)#hostname $hostname``
+``Router(config)#hostname R2``
 
 ## Désactiver la recherche DNS
 
@@ -37,4 +37,11 @@ Router(config-line)#login local
 ```
 ## Ajouter une route par défaut
 
-``Router(config)# ip route 0.0.0.0 0.0.0.0 $interface``
+``Router(config)# ip route 0.0.0.0 0.0.0.0 serial 0/0/0``
+
+## Configurer la bannière
+
+```
+R1(config)#banner motd $char-final
+Authorized users only, violaters will be shot on sight! $char-final
+``
