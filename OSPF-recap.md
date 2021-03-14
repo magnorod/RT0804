@@ -29,7 +29,7 @@ Les interfaces dites “passives” sont celles qui n’envoient aucun message d
 
 ``Router(config-router)# passive-interface $interface-name``
 
-## Ajouter la 
+## Définir la route par défaut sur OSPF
 
 Indiquer au router qu'une de ses interfaces va devenir la route par défaut pour l'ensemble de la zone OSPF
 
