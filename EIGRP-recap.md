@@ -57,7 +57,7 @@ n'affecte pas la bande passante physique (uniquement pour le routage)
 
 ## Désactivation de l'agrégation de routes automatique 
 
-``R2(config-if)#no auto-summary``
+``R2(config-router)#no auto-summary``
 
 ## Agrégation de routes manuel
 
@@ -75,3 +75,11 @@ R2(config-if)#ip summary-address eigrp $autonomous-system 192.168.0.0 255.255.25
 R2(config)#interface $loopback-interface
 R2(config-if)#ip address $ip $netmask 
 ```
+
+## Injecter les routes statiques dans EIGRP
+metric = bandwith delay reliability load MTU
+
+````
+Router(config)#router eigrp $autonomous-system
+Router(config-router)#redistribute static metric 10000 100 255 1 1500
+````
