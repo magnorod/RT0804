@@ -45,3 +45,15 @@ Router(config-line)#login local
 R1(config)#banner motd $char-final
 Authorized users only, violaters will be shot on sight! $char-final
 ```
+
+## Configurer un timeout de 15 min pour l'exec mode
+
+````
+Router(config)#line vty 0 15
+Router(config-line)#exec-timeout 15 0
+````
+## Ajouter une interface passive
+
+Les interfaces dites “passives” sont celles qui n’envoient aucun message d’un protocole de routage
+
+``Router(config-router)# passive-interface $interface-name``
