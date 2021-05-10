@@ -83,3 +83,17 @@ metric = bandwith delay reliability load MTU
 Router(config)#router eigrp $autonomous-system
 Router(config-router)#redistribute static metric 10000 100 255 1 1500
 ````
+
+
+## Activer IPV6
+
+```
+ROUTER(config)#ipv6 router eigrp autonomus-system
+R1(config-rtr)#eigrp router-id 1.1.1.1
+R1(config-rtr)#no shutdown
+```
+
+## Ajouter un réseau en IPV6
+
+R1(config)#interface serial 0/0/0
+R1(config-if)#ipv6 eigrp 1
