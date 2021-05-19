@@ -1,8 +1,7 @@
 ACL
 
 ACL étendu= au plus proche de la source du trafic à bloquer
-ACL standard = au plus proche de la destination du trafic à bloquer
-
+ACL standard = au plus proche de la destination du trafic
 ## créer une acl
 R2(config)#access-list 10 remark ACL_TO_PINK_LAN
 
