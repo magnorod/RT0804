@@ -1,9 +1,46 @@
-ACL
+# ACL
 
 ACL étendu= au plus proche de la source
+
 ACL standard = au plus proche de la destination
 
-## créer une acl
+<!> il faut toujours utiliser le wildmask et pas le masque réseau classique <!>
+
+OK
+
+```
+access-list 101 remark ACL_AVEC_WILDMASK
+access-list 101 deny tcp any host 192.168.1.70 eq ftp
+access-list 101 deny icmp any 192.168.1.0 0.0.0.63
+access-list 101 permit ip any any
+```
+
+Ce qui donne : 
+
+```
+Extended IP access list 101
+    10 deny tcp any host 192.168.1.70 eq ftp
+    20 deny icmp any 192.168.1.0 0.0.0.63
+    30 permit ip any any
+```
+KO car le résultat est différent (cisco ne traduit pas automatiquement)
+
+```
+access-list 101 remark ACL_SANS_WILDMASK_KO
+access-list 101 deny tcp any host 192.168.1.70 eq ftp
+access-list 101 deny icmp any 192.168.1.0 255.255.255.192
+access-list 101 permit ip any any
+```
+Ce qui donne:
+
+```
+Extended IP access list 101
+    10 deny tcp any host 192.168.1.70 eq ftp
+    20 deny icmp any 0.0.0.0 255.255.255.192
+    30 permit ip any any
+```
+
+## créer une acl numérotée avec une remarque
 R2(config)#access-list 10 remark ACL_TO_PINK_LAN
 
 ## ajouter uen règle pour un hôte
