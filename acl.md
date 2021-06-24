@@ -9,7 +9,6 @@ ACL standard = au plus proche de la destination
 OK
 
 ```
-access-list 101 remark ACL_AVEC_WILDMASK
 access-list 101 deny tcp any host 192.168.1.70 eq ftp
 access-list 101 deny icmp any 192.168.1.0 0.0.0.63
 access-list 101 permit ip any any
@@ -26,7 +25,6 @@ Extended IP access list 101
 KO car le résultat est différent (cisco ne traduit pas automatiquement)
 
 ```
-access-list 101 remark ACL_SANS_WILDMASK_KO
 access-list 101 deny tcp any host 192.168.1.70 eq ftp
 access-list 101 deny icmp any 192.168.1.0 255.255.255.192
 access-list 101 permit ip any any
