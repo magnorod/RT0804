@@ -80,3 +80,34 @@ R1(config-if)# ipv6 traffic-filter BLOCK_HTTP in
 
 # supprimer une ACL standard nommée "vty_block"
 R1(config)#no ip access-list standard vty_block
+
+# appliquer acl standard nommée sur line vty
+
+```
+HQ(config)#ip access-list standard vty_block
+HQ(config-std-nacl)#permit ?
+  A.B.C.D  Address to match
+  any      Any source host
+  host     A single host address
+HQ(config-std-nacl)#permit 192.168.1.64 ?
+  A.B.C.D  Wildcard bits
+  <cr>
+HQ(config-std-nacl)#permit 192.168.1.64 0.0.0.7 ?
+  <cr>
+HQ(config-std-nacl)#permit 192.168.1.64 0.0.0.7 
+HQ(config-std-nacl)#line ?
+% Unrecognized command
+HQ(config-std-nacl)#?
+  <1-2147483647>  Sequence Number
+  default         Set a command to its defaults
+  deny            Specify packets to reject
+  exit            Exit from access-list configuration mode
+  no              Negate a command or set its defaults
+  permit          Specify packets to forward
+  remark          Access list entry comment
+HQ(config-std-nacl)#line vty 0 15
+HQ(config-line)#ac
+HQ(config-line)#access
+HQ(config-line)#access-class vty_block in
+```
+
