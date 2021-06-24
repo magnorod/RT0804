@@ -4,7 +4,7 @@ ACL étendu= au plus proche de la source
 
 ACL standard = au plus proche de la destination
 
-<!> il faut toujours utiliser le wildmask et pas le masque réseau classique <!>
+<!> il faut toujours utiliser le masque inverse et pas le masque réseau classique <!>
 
 OK
 
