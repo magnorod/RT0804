@@ -77,3 +77,6 @@ R1(config)#ipv6 access-list BLOCK_HTTP
 
 # appliquer une ACL ipv6
 R1(config-if)# ipv6 traffic-filter BLOCK_HTTP in
+
+# supprimer une ACL standard nommée "vty_block"
+R1(config)#no ip access-list standard vty_block
