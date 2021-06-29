@@ -16,11 +16,16 @@
 
 ``Router#show ip ospf neighbor``
 
-# Définir la priorité d'une interface
+## Définir la priorité d'une interface (val par défaut = 1)
+
+prorité de interface la plus grande => devient le designated router
+2 ème plus grande priorité=> devient le backup designated router
 
 ```
 Router(config)#interface $interface-name
 Router(config-if)#ip ospf priority $priority-number
+Router(config-if)#shutdown
+Router(config-if)#no shutdown
 ```
 
 
@@ -30,7 +35,7 @@ Indiquer au router qu'une de ses interfaces va devenir la route par défaut pour
 
 Remarque:
 
-default-information originate reste en O au niveau de la table de routage Alors que
+default-information originate reste en O*E2 au niveau de la table de routage Alors que
 redistribute static est en D*EX
 
 ```
