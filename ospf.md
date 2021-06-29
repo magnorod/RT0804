@@ -24,7 +24,6 @@ Router(config-if)#ip ospf priority $priority-number
 ```
 
 
-
 ## Définir la route par défaut sur OSPF
 
 Indiquer au router qu'une de ses interfaces va devenir la route par défaut pour l'ensemble de la zone OSPF
@@ -51,4 +50,12 @@ redistribute connected subnets
 ```
 R1(config)#interface gigabitEthernet 0/0
 R1(config-if)#ipv6 ospf 10 area 0
+ ```
+ 
+ ## modifier le débit de référence à 1Gbps (100 Mbps par défaut)
+ 
+ ```
+ BRANCH2(config-router)#auto-cost reference-bandwidth 1000
+% OSPF: Reference bandwidth is changed.
+        Please ensure reference bandwidth is consistent across all routers.
  ```
