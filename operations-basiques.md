@@ -86,7 +86,7 @@ ROUTER(config)#ipv6 unicast-routing
 ```
 SW2(config)#interface vlan 1
 
-ip address ip mask
+ip address <address> <mask>
 ```
 
 
