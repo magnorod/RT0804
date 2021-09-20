@@ -122,3 +122,11 @@ SW2(config-if)# switchport mode access
 SW2(config-if)# switchport access <vlan-id>
 ```
 
+## Trunking manuel
+
+```
+SW2(config-if)# switchport mode trunk
+SW2(config-if)# switchport nonegotiate
+```
+
+
