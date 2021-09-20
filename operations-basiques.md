@@ -2,23 +2,31 @@
 
 ## Modification du nom de l'hôte
 
-``Router(config)#hostname R2``
-
+```
+Router(config)#hostname R2
+```
 ## Désactiver la recherche DNS
 
-``Routeur(config)#no ip domain-lookup``
-
+```
+Routeur(config)#no ip domain-lookup
+```
 ## Définir le mdp pour le mode privileged
 
-``Routeur(config)# enable password $motdepasse ``
+```
+Routeur(config)# enable password $motdepasse
+```
 
 ## Définir le mdp chiffré pour le mode privileged
 
-``Routeur(config)# enable secret $motdepasse``
+```
+Routeur(config)# enable secret $motdepasse
+```
 
 ## Chiffrer les mdp du mode privileged et console
 
-``Routeur(config)# service password-encryption`` 
+```
+Routeur(config)# service password-encryption 
+```
 
 ## Définir le mdp pour les connexions via le mode console
 
@@ -35,11 +43,12 @@ Router(config)#line vty 0 15
 Router(config-line)#password $motdepasse
 Router(config-line)#login local
 ```
+
 ## Ajouter une route par défaut
 
-``Router(config)# ip route 0.0.0.0 0.0.0.0 serial 0/0/0``
-
-
+```
+Router(config)# ip route 0.0.0.0 0.0.0.0 serial 0/0/0
+```
 
 ## Configurer la bannière
 
@@ -82,7 +91,7 @@ ROUTER(config)#ipv6 unicast-routing
 
 # VLAN
 
-## utiliser le vlan pour donner une IP au switch (niveau 2)
+## Configurer la SVI
 
 
 ```
@@ -92,8 +101,24 @@ ip address <address> <mask>
 ```
 
 
-## configurer passerelle par défaut
+## Configurer passerelle par défaut
 
 ```
 SW2(config)#ip default-gateway 10.10.20.1
 ```
+
+## Créer un vlan
+
+```
+SW2(config)#vlan <id>
+name
+```
+
+## assigner un vlan à un port
+
+
+```
+SW2(config-if)# switchport mode access
+SW2(config-if)# switchport access <vlan-id>
+```
+
