@@ -58,16 +58,18 @@ Router(config-line)#exec-timeout 15 0
 
 Les interfaces dites “passives” sont celles qui n’envoient aucun message d’un protocole de routage
 
-``Router(config-router)# passive-interface $interface-name``
+```
+Router(config-router)# passive-interface $interface-name
+```
 
 
 ## Synchroniser le flux d'erreur et autres sorties par défaut (pour ne pas bousiller le terminal avec des commandes debug alors que l'on tape une commande)
 
 
-````
+```
 Router(config)#line con 0
 Router(config-line)#logging synchronous
-````
+```
 
 
 ## Activer IPV6
