@@ -39,6 +39,8 @@ Router(config-line)#login local
 
 ``Router(config)# ip route 0.0.0.0 0.0.0.0 serial 0/0/0``
 
+
+
 ## Configurer la bannière
 
 ```
@@ -68,9 +70,28 @@ Router(config-line)#logging synchronous
 ````
 
 
-
-# Activer IPV6
+## Activer IPV6
 
 Il est nécessaire d'activer le routage ipv6 unicast-routing pour activer le routage ipv6 via un protocole de routage
 
+```
 ROUTER(config)#ipv6 unicast-routing
+```
+
+# VLAN
+
+## utiliser le vlan pour donner une IP au switch (niveau 2)
+
+
+```
+SW2(config)#interface vlan 1
+
+ip address ip mask
+```
+
+
+## configurer passerelle par défaut
+
+```
+SW2(config)#ip default-gateway 10.10.20.1
+```
